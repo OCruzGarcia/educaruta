@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a2a4a">
+  <meta name="description" content="Busca escuelas de educación especial, escuelas inclusivas y centros de apoyo en Nicaragua.">
+  <title>Buscar oportunidades | EducaRuta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+  <script src="js/comun.js" defer></script>
+  <script src="js/config.js" defer></script>
+  <script src="js/buscar.js" defer></script>
+</head>
+<body class="pagina-buscar">
+  <a class="salto" href="#contenido">Saltar al contenido principal</a>
+  <header class="top" id="inicio">
+    <div class="nav-wrap">
+      <a class="marca" href="index.html" aria-label="EducaRuta, página de inicio">
+        <span class="marca-icono" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M6 10c7-3 13-1 18 3v27c-5-4-11-6-18-3z" fill="#fff"/><path d="M42 10c-7-3-13-1-18 3v27c5-4 11-6 18-3z" fill="#dcecff"/><path d="M24 16v23" stroke="#0b5cad" stroke-width="2"/><path d="M25 37c2-8 5-13 10-18" fill="none" stroke="#f2b705" stroke-width="4" stroke-linecap="round"/><circle cx="36" cy="16" r="4" fill="#f2b705"/></svg></span>
+        <span class="marca-texto"><strong>EducaRuta</strong><small>Oportunidades para todos</small></span>
+      </a>
+      <nav class="nav-links" id="menuNav" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a><a href="buscar.html" aria-current="page">Buscar oportunidades</a><a href="index.html#como-funciona">Cómo funciona</a><a href="index.html#nosotros">Quiénes somos</a><a href="index.html#contacto">Contacto</a>
+      </nav>
+      <div class="accesibilidad" aria-label="Opciones de accesibilidad"><button type="button" id="mas" aria-label="Aumentar tamaño de letra" title="Aumentar tamaño de letra">A+</button><button type="button" id="con" aria-label="Activar o desactivar alto contraste" title="Alto contraste"><span aria-hidden="true">◐</span></button></div>
+      <button class="menu-btn" type="button" id="menuBtn" aria-expanded="false" aria-controls="menuNav" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="buscar-hero">
+      <div class="wrap buscar-hero-grid">
+        <div>
+          <p class="sobretitulo"><span class="punto"></span> TU BÚSQUEDA COMIENZA AQUÍ</p>
+          <h1>Encuentra una oportunidad <span>cerca de tu comunidad.</span></h1>
+          <p>Explora centros educativos especializados, escuelas inclusivas y organizaciones que pueden orientar a tu familia.</p>
+          <div class="buscar-confianza"><span aria-hidden="true">✓</span> Información organizada para ayudarte a explorar opciones.</div>
+        </div>
+        <div class="buscar-hero-art" aria-hidden="true">
+          <div class="art-sol"></div><div class="art-casa"><span></span><i></i><b></b></div><div class="art-camino"></div><div class="art-escuela"><span>EDU</span><i></i><b></b></div><div class="art-hoja hoja-a">✦</div><div class="art-hoja hoja-b">♡</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap ayuda-video"><details class="video-texto"><summary>¿Necesitas ayuda? Mira el video de 2 minutos</summary>
+      <div class="video-bloque"><figure class="video-fig">
+            <video controls preload="none" playsinline poster="media/portada.jpg" aria-describedby="video-descr">
+              <source src="media/EducaRuta.mp4" type="video/mp4">
+              Tu navegador no puede reproducir el video. Puedes leer lo que dice en esta página.
+            </video>
+            <figcaption id="video-descr">Video de 2 minutos con lengua de señas y voz. Explica cómo usar EducaRuta.</figcaption>
+          </figure>
+        <p><a href="index.html#como-funciona">Leer lo que dice el video</a></p></div></details></section>
+
+    <section class="buscador-panel wrap" aria-labelledby="titulo-filtros">
+      <div class="buscador-titulo"><span class="buscador-icono" aria-hidden="true">⌕</span><div><p class="sobretitulo oscuro">EXPLORA TUS OPCIONES</p><h2 id="titulo-filtros">¿Dónde buscas apoyo educativo?</h2><p>Elige una ubicación y filtra los resultados según lo que necesitas.</p></div></div>
+      <form id="filtros" class="filtros-grid">
+        <div class="campo"><label for="dep">Departamento</label><select id="dep" name="departamento"><option value="">Todos los departamentos</option></select></div>
+        <div class="campo"><label for="mun">Municipio</label><select id="mun" name="municipio" disabled><option value="">Todos los municipios</option></select></div>
+        <div class="campo campo-busqueda"><label for="texto">Nombre o servicio</label><input id="texto" name="texto" type="search" placeholder="Ej. educación especial, terapia…" autocomplete="off"></div>
+        <div class="campo"><label for="tipo">Tipo de centro</label><select id="tipo" name="tipo"><option value="">Todos los tipos</option><option value="especializada">Educación especializada</option><option value="inclusiva">Escuela inclusiva</option><option value="organizacion">Centro de apoyo</option></select></div>
+        <div class="filtros-acciones"><button class="btn btn-azul" type="submit">Buscar oportunidades <span aria-hidden="true">→</span></button><button class="btn btn-ligero" id="limpiar" type="button">Limpiar filtros</button></div>
+      </form>
+      
+    </section>
+
+    <section class="resultados wrap" aria-labelledby="titulo-resultados">
+      <div class="resultados-cabecera"><div><p class="sobretitulo oscuro">OPCIONES PARA EXPLORAR</p><h2 id="titulo-resultados">Instituciones y servicios</h2><p id="resumen" aria-live="polite">Cargando centros…</p></div><label class="ordenar" for="orden">Ordenar<select id="orden"><option value="nombre">Nombre A–Z</option><option value="departamento">Departamento</option><option value="tipo">Tipo de apoyo</option></select></label></div>
+      <div class="chips-categorias" aria-label="Filtrar por categoría"><button type="button" class="chip activo" data-chip="">Todas las opciones</button><button type="button" class="chip" data-chip="especializada">Educación especializada</button><button type="button" class="chip" data-chip="inclusiva">Escuelas inclusivas</button><button type="button" class="chip" data-chip="organizacion">Centros de apoyo</button></div>
+      <div id="lista" class="resultados-grid"></div>
+      <div id="vacio" class="sin-resultados" hidden><span aria-hidden="true">⌕</span><h3>No encontramos opciones con esos filtros</h3><p>Prueba con otro municipio, elimina algún filtro o busca por una palabra más general.</p><button class="btn btn-azul" id="reiniciarVacio" type="button">Ver todas las opciones</button></div>
+      <div class="nota-verificacion"><span aria-hidden="true">✓</span><p><strong>Confirma los datos antes de acudir.</strong> La información puede cambiar. Si puedes, llama al centro para confirmar la dirección y los horarios.</p></div>
+    </section>
+
+    <section class="buscar-ayuda"><div class="wrap ayuda-contenido"><div class="ayuda-icono" aria-hidden="true">♡</div><div><p class="sobretitulo">¿NO SABES POR DÓNDE EMPEZAR?</p><h2>Encontrar información es el primer paso.</h2><p>EducaRuta busca reunir distintas opciones para que las familias puedan conocerlas y decidir con más información.</p></div><a class="btn btn-amarillo" href="index.html#nosotros">Conoce el proyecto <span aria-hidden="true">→</span></a></div></section>
+  </main>
+
+  <footer class="footer"><div class="wrap footer-grid"><div class="footer-marca"><a class="marca marca-footer" href="index.html"><span class="marca-icono" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M6 10c7-3 13-1 18 3v27c-5-4-11-6-18-3z" fill="#fff"/><path d="M42 10c-7-3-13-1-18 3v27c5-4 11-6 18-3z" fill="#dcecff"/><path d="M24 16v23" stroke="#0b5cad" stroke-width="2"/><path d="M25 37c2-8 5-13 10-18" fill="none" stroke="#f2b705" stroke-width="4" stroke-linecap="round"/><circle cx="36" cy="16" r="4" fill="#f2b705"/></svg></span><span class="marca-texto"><strong>EducaRuta</strong><small>Oportunidades para todos</small></span></a><p>Una iniciativa de PANDIS para acercar información sobre oportunidades educativas a familias de niñas, niños y jóvenes con discapacidad.</p></div><div class="footer-enlaces"><strong>Explora</strong><a href="index.html">Inicio</a><a href="buscar.html">Buscar oportunidades</a><a href="index.html#como-funciona">Cómo funciona</a></div><div class="footer-enlaces"><strong>Sobre el proyecto</strong><a href="index.html#nosotros">Quiénes somos</a><span>Tus datos se guardan de forma privada.</span><span>La información de cada centro debe confirmarse antes de acudir.</span></div></div><div class="wrap footer-final"><span>© <span id="anio"></span> EducaRuta · PANDIS</span><span>Acercando oportunidades educativas, construyendo inclusión.</span></div></footer>
+
+  <dialog id="detalleCentro" class="detalle-dialog" aria-labelledby="detalleNombre"><div class="detalle-cabecera"><span class="detalle-icono" id="detalleIcono" aria-hidden="true">⌂</span><button type="button" class="cerrar-dialog" id="cerrarDetalle" aria-label="Cerrar detalles">×</button></div><div class="detalle-contenido"><span class="etiqueta etiqueta-azul" id="detalleTipo">CENTRO</span><h2 id="detalleNombre">Nombre de la institución</h2><p id="detalleUbicacion" class="detalle-ubicacion"></p><div class="detalle-bloque"><h3>Dirección</h3><p id="detalleDireccion"></p></div><div class="detalle-bloque"><h3>Teléfono</h3><p id="detalleTelefono"></p></div><div class="detalle-bloque"><h3>Servicios</h3><p id="detalleServicios" style="white-space:pre-line"></p></div><div class="detalle-bloque"><h3>Edades o niveles</h3><p id="detalleEdades" style="white-space:pre-line"></p></div><div class="detalle-acciones"><button type="button" class="btn btn-azul" id="escribirCentro">Escribir a la escuela <span aria-hidden="true">→</span></button><button type="button" class="btn btn-ligero" id="cerrarDetalleAbajo">Volver a los resultados</button></div></div></dialog>
+
+  <dialog id="contactoCentro" class="contacto-dialog" aria-labelledby="contactoTitulo">
+    <div class="detalle-cabecera contacto-cabecera"><span class="detalle-icono" aria-hidden="true">✉</span><button type="button" class="cerrar-dialog" id="cerrarContacto" aria-label="Cerrar formulario">×</button></div>
+    <div class="detalle-contenido">
+      <span class="etiqueta etiqueta-azul">CONTACTO CON LA INSTITUCIÓN</span>
+      <h2 id="contactoTitulo">Escribe a la escuela</h2>
+      <p id="contactoPara" class="detalle-ubicacion"></p>
+      <div class="contacto-aviso"><strong>Tu información importa.</strong><p>Comparte solo los datos necesarios. El nombre del niño, niña o joven es opcional. Tu solicitud se guarda de forma privada y solo el equipo de PANDIS puede verla. Para que el centro reciba tu mensaje, tendrás que enviarlo tú mismo por WhatsApp o por teléfono.</p></div>
+      <form id="formContacto" novalidate>
+        <div class="campo-contacto"><label for="ne">Tu nombre completo</label><input id="ne" name="nombre_encargado" type="text" maxlength="100" autocomplete="name" required></div>
+        <div class="campo-contacto"><label for="te">Tu teléfono</label><input id="te" name="telefono_encargado" type="tel" inputmode="tel" maxlength="20" autocomplete="tel" required></div>
+        <div class="campo-contacto"><label for="es">Nombre del niño, niña o joven (opcional)</label><input id="es" name="nombre_estudiante" type="text" maxlength="100"></div>
+        <div class="campo-contacto"><label for="ed">Edad (opcional)</label><input id="ed" name="edad_estudiante" type="number" min="0" max="99" inputmode="numeric"></div>
+        <fieldset class="apoyos-contacto"><legend>¿Qué apoyo necesita? (marca uno o más)</legend><div class="opts-contacto" id="apoyos"><label><input type="checkbox" value="Auditivo (sordera)"> Auditivo (sordera)</label><label><input type="checkbox" value="Visual"> Visual</label><label><input type="checkbox" value="Motriz o física"> Motriz o física</label><label><input type="checkbox" value="Intelectual"> Intelectual</label><label><input type="checkbox" value="Autismo"> Autismo</label><label><input type="checkbox" value="Múltiple"> Múltiple</label><label><input type="checkbox" value="No lo sé"> No lo sé</label></div></fieldset>
+        <div class="campo-contacto"><label for="depf">Departamento donde vive tu familia (opcional)</label><select id="depf" name="departamento_familia"><option value="">Prefiero no indicarlo</option></select></div><div class="campo-contacto"><label for="munf">Municipio donde vive tu familia (opcional)</label><select id="munf" name="municipio_familia" disabled><option value="">Elige primero un departamento</option></select></div><div class="campo-contacto"><label for="co">Comunidad o barrio (opcional)</label><input id="co" name="comunidad_barrio" type="text" maxlength="150" autocomplete="address-level3"></div>
+        <div class="campo-contacto"><label for="mj">Tu mensaje para la institución</label><textarea id="mj" name="mensaje" maxlength="500" required>Hola, quisiera saber si tienen cupo y cómo inscribir a mi hijo o hija.</textarea></div>
+        <label class="consent-contacto"><input type="checkbox" id="ok" required><span>Acepto que EducaRuta guarde estos datos para gestionar mi consulta. Si continúo a WhatsApp, la institución podrá ver el número desde el que envío el mensaje.</span></label>
+        <details class="privacidad-contacto"><summary>Ver aviso de privacidad</summary><p>Guardamos lo que escribes para gestionar tu consulta y para conocer en qué zonas hacen falta más centros. Solo el equipo de PANDIS puede ver estos datos; desde esta página nadie puede leerlos. No incluyas documentos ni detalles médicos innecesarios.</p></details>
+        <p class="mensaje-contacto" id="mensajeContacto" role="alert" aria-live="polite"></p>
+        <button class="btn btn-azul btn-enviar-contacto" type="submit">Guardar y continuar <span aria-hidden="true">→</span></button>
+      </form>
+      <section id="resultadoContacto" class="resultado-contacto" hidden aria-live="polite">
+        <h3 id="resultadoContactoTitulo">Revisa el siguiente paso</h3><p id="resultadoContactoTexto"></p><pre id="vistaMensaje" class="vista-mensaje"></pre><div class="acciones-contacto"><button type="button" class="btn btn-azul" id="copiarMensaje">Copiar mensaje</button><a class="btn btn-amarillo" id="abrirWhatsApp" href="#" target="_blank" rel="noopener" hidden>Continuar a WhatsApp</a><a class="btn btn-ligero" id="llamarCentro" href="#" hidden>Llamar al centro</a></div>
+      </section>
+    </div>
+  </dialog>
+</body>
+</html>
