@@ -80,3 +80,49 @@
 .video-texto-cuerpo p{margin:0 0 6px}
 .ayuda-video{margin-top:20px}
 .ayuda-video .video-bloque{margin:8px 0 12px}
+
+
+/* ---------- Asistente virtual demostrativo de EducaRuta ---------- */
+.er-chat-launcher{position:fixed;right:clamp(16px,3vw,30px);bottom:clamp(16px,3vw,28px);z-index:1200;display:flex;align-items:center;gap:10px;min-height:58px;padding:9px 18px 9px 12px;border:2px solid #fff;border-radius:999px;background:#0b5cad;color:#fff;box-shadow:0 8px 28px rgba(10,42,74,.28);font-weight:700;cursor:pointer;transition:transform .18s,box-shadow .18s}
+.er-chat-launcher:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(10,42,74,.32)}
+.er-chat-launcher:focus-visible,.er-chat-panel button:focus-visible,.er-chat-panel input:focus-visible{outline:4px solid #f2b705;outline-offset:3px}
+.er-chat-launcher-icon{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:#fff;color:#0b5cad;font-size:1.45rem;line-height:1}
+.er-chat-launcher-label{font-size:.9rem}
+.er-chat-launcher-open .er-chat-launcher-icon{font-size:1.25rem}
+.er-chat-panel{position:fixed;right:clamp(12px,3vw,28px);bottom:clamp(86px,10vw,100px);z-index:1199;width:min(390px,calc(100vw - 24px));max-height:min(690px,calc(100dvh - 120px));display:flex;flex-direction:column;overflow:hidden;border:1px solid #cbd9e7;border-radius:20px;background:#fff;color:#12304a;box-shadow:0 18px 55px rgba(10,42,74,.25);font-size:16px;line-height:1.45}
+.er-chat-panel[hidden]{display:none}
+.er-chat-header{display:flex;align-items:center;gap:11px;padding:16px;background:#0a2a4a;color:#fff}
+.er-chat-avatar{display:grid;place-items:center;flex:0 0 42px;width:42px;height:42px;border-radius:13px;background:#0b5cad;border:1px solid rgba(255,255,255,.5);font-weight:800;font-size:1.25rem}
+.er-chat-heading{display:flex;flex-direction:column;gap:3px;min-width:0}
+.er-chat-heading strong{font-size:1rem;line-height:1.2}
+.er-chat-heading span{font-size:.76rem;color:#dcecff}
+.er-chat-heading i{display:inline-block;width:7px;height:7px;margin-right:4px;border-radius:50%;background:#f2b705}
+.er-chat-close{margin-left:auto;align-self:flex-start;display:grid;place-items:center;width:38px;height:38px;border:1px solid #7890a6;border-radius:10px;background:transparent;color:#fff;font-size:1.6rem;cursor:pointer}
+.er-chat-notice{padding:10px 14px;background:#fff7d8;border-bottom:1px solid #f0df9e;color:#5a4810;font-size:.78rem}
+.er-chat-messages{padding:15px;overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column;gap:10px;min-height:120px}
+.er-chat-bubble{max-width:94%;padding:11px 13px;border-radius:14px;font-size:.91rem;white-space:pre-wrap;overflow-wrap:anywhere}
+.er-chat-bot{align-self:flex-start;background:#edf4fa;border:1px solid #d8e6f2;border-bottom-left-radius:4px;color:#12304a}
+.er-chat-user{align-self:flex-end;background:#0b5cad;color:#fff;border-bottom-right-radius:4px}
+.er-chat-prompts-title{margin:3px 0 0;color:#536a7f;font-size:.82rem;font-weight:700}
+.er-chat-prompts{display:flex;flex-direction:column;align-items:stretch;gap:7px}
+.er-chat-prompt{padding:9px 11px;text-align:left;border:1px solid #b9cfe2;border-radius:11px;background:#fff;color:#0b5cad;font-size:.85rem;font-weight:700;cursor:pointer}
+.er-chat-prompt:hover{background:#edf4fa;border-color:#0b5cad}
+.er-chat-form{display:flex;gap:8px;padding:12px;border-top:1px solid #d8e3ed;background:#fff}
+.er-chat-form input{min-width:0;flex:1;padding:10px 12px;border:1px solid #b9c9d8;border-radius:12px;background:#fff;color:#12304a;font-size:16px}
+.er-chat-form input::placeholder{color:#647b90}
+.er-chat-form button{flex:0 0 44px;width:44px;height:44px;border:0;border-radius:12px;background:#0b5cad;color:#fff;font-size:1.25rem;cursor:pointer}
+.er-chat-footer{padding:0 12px 10px;text-align:center;color:#647b90;background:#fff;font-size:.72rem}
+.er-chat-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:480px){
+ .er-chat-launcher{right:12px;bottom:12px;min-height:54px;padding:7px 13px 7px 8px;gap:8px}
+ .er-chat-launcher-icon{width:34px;height:34px}
+ .er-chat-launcher-label{font-size:.84rem}
+ .er-chat-panel{right:8px;bottom:76px;width:calc(100vw - 16px);max-height:calc(100dvh - 92px);border-radius:16px}
+ .er-chat-header{padding:12px}
+ .er-chat-messages{padding:12px}
+}
+html[data-c="alto"] .er-chat-panel{border:3px solid #000;box-shadow:0 0 0 3px #ffdf00,0 18px 55px rgba(0,0,0,.45)}
+html[data-c="alto"] .er-chat-notice{background:#fff;color:#000;border:2px solid #000}
+html[data-c="alto"] .er-chat-bot,html[data-c="alto"] .er-chat-prompt{background:#fff;color:#000;border:2px solid #000}
+html[data-c="alto"] .er-chat-user,html[data-c="alto"] .er-chat-form button,html[data-c="alto"] .er-chat-launcher{background:#000;color:#fff;border:2px solid #ffdf00}
+html[data-c="alto"] .er-chat-form input{background:#fff;color:#000;border:2px solid #000}
